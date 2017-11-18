@@ -2,11 +2,14 @@ package com.example;
 
 public class Main {
     public static void main(String[] args) {
-        FibonacciSequence fs =
-                new FibonacciSequence(); // You should change only this line
+        FibonacciSequence fs = new CachedFibonacciSequence(new FibonacciSequence());
 
-        long tenthValue = fs.get(10);
+        int index = 40;
 
-        System.out.println(tenthValue);
+        long startTime = System.currentTimeMillis();
+        long fibValue = fs.get(index);
+        System.err.printf("fib[%d] took: %dms\n", index, System.currentTimeMillis() - startTime);
+
+        System.out.println(fibValue);
     }
 }
