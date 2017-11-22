@@ -2,7 +2,7 @@ package com.example;
 
 public class Main {
     public static void main(String[] args) {
-        FibonacciSequence fs = new CachedFibonacciSequence(new FibonacciSequence());
+        FibonacciSequence fs = new CachedFibonacciSequence(new FibonacciSequenceImpl());
 
         int index = 40;
 
